@@ -1,19 +1,33 @@
+def guess
+  rand(6) + 1 
+end
+
+def get_user_guess
+  gets.chomp
+end
+
+def correct_guess
+  puts 'You guessed the correct number!'
+end
+
+def incorrect_guess(number)
+  puts "Sorry! The computer guessed #{number}."
+end
+
+def user_exit
+  puts 'Goodbye!'
+end
+
 def run_guessing_game
-  random_num = rand(6) + 1 #generate and store random number
-  prompt_user = puts "Guess a number between 1 and 6!"
-  user_input = gets.chomp #Capture user input from the command line
-  
-  if user_input == "exit"
-    puts "Goodbye!"
+  user_guess = get_user_guess
+  computer_guess = guess
+  if user_guess != 'exit'
+    if user_guess.to_i == computer_guess
+      correct_guess
+    else
+      incorrect_guess(computer_guess)
+    end
+  else
+    user_exit
   end
-  
-  if user_input != random_num
-    puts "Sorry! The computer guessed #{random_num}."
-    prompt_user
-    user_input
-  end 
-  
-  if user_input == random_num 
-    puts "You guessed the correct number!"
-  end 
-end 
+end
