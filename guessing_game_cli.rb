@@ -5,12 +5,14 @@ def run_guessing_game
   
   while user_input != random_num do
     puts "Sorry! The computer guessed #{random_num}."
+    prompt_user
+    user_input
   end
   
   if user_input == random_num 
     puts "You guessed the correct number!"
-    
   elsif user_input == "exit"
     puts "Goodbye!"
   end 
+  
 end 
