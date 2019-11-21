@@ -11,7 +11,9 @@ def run_guessing_game
     puts "Sorry! The computer guessed #{random_num}."
     prompt_user
     user_input
-  elsif user_input == random_num 
+  end 
+  
+  if user_input == random_num 
     puts "You guessed the correct number!"
   end 
 end 
